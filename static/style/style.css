@@ -1,0 +1,151 @@
+/* Apply box-sizing globally for consistency */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: large;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  margin: 0px;
+  background-image: url('/static/2I3c.gif'); /* Add your image path here */
+  background-size: cover; /* Cover the entire page */
+  background-position: center; /* Center the background image */
+  background-attachment: fixed; /* Optional: Fix the background image and let the content scroll over it */
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); 
+  z-index: 1; 
+}
+
+/* Ensure content is above the overlay */
+body * {
+  position: relative;
+  z-index: 2;
+}
+
+.loginArea {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  width: 600px;
+  height: 400px;
+  background-color: #87a07dd6;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 50px;
+}
+
+.usernameBox input,
+.passwordBox input,
+#submitButton  {
+width: 300px;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+
+
+#submitButton {
+  width: 300px; /* Make the button fill the parent container */
+  padding: 10px;
+  margin-top: 8px; /* Consistent with input fields margin */
+  background-color: #87a07d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#submitButton:hover {
+  background-color: #87a07d;
+}
+
+@media screen and (max-width: 768px) {
+  .loginArea {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+
+#nav {
+  display: none;
+  align-items: center;
+  justify-content: right;
+  height: 75px;
+  background-color: #9db089a3; /* Adjusted to a specified color */
+  margin: 0 auto;
+  padding-right: 20px; /* Added for spacing */
+}
+
+#logoutButton {
+  margin: 25px;
+  width: 150px;
+  height: 40px;
+  background-color: #9DB089; 
+  border: none; 
+  border-radius: 10px;
+  font-size: large;
+  color: white; 
+  cursor: pointer; 
+}
+
+#app {
+  top: 50%;
+  bottom: 50%;
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+
+}
+
+.nameBox, .auditRatioBox, .auditReceivedBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-basis: calc(48%);
+  height: 350px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #87a07d;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.auditReceivedBox {
+  flex-basis: 100%;
+  margin: 20px;
+  height: 350px;
+}
+
+@media (max-width: 768px) {
+  .nameBox, .auditRatioBox {
+      flex-basis: 100%;
+  }
+}
